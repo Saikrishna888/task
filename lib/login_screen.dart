@@ -29,20 +29,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    //checkLoggedInOrNot();
+   
     super.initState();
   }
 
-  // checkLoggedInOrNot() async {
-  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   if (prefs.get("userName") != null) {
-  //     Navigator.pushAndRemoveUntil(
-  //                     context,
-  //                     MaterialPageRoute(
-  //                         builder: (BuildContext context) => Home(selectedIndex: 0,)),
-  //                     (Route<dynamic> route) => false);
-  //   }
-  // }
+  
   bool isvisible = false;
   @override
   Widget build(BuildContext context) {
@@ -51,31 +42,14 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          // decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //         image: AssetImage("images/AppBG.png"), fit: BoxFit.cover),
-          //     color: Colors.white),
+          
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Container(
-                //   margin: EdgeInsets.all(20),
-                //   width: 200,
-                //   child: Image.asset(
-                //     'images/EVRidesLogo.png',
-                //     width: MediaQuery.of(context).size.width / 2,
-                //   ),
-                // ),
-                // Container(
-                //   width: 200,
-                //   child: Image.asset(
-                //     'images/Hello.png',
-                //     width: MediaQuery.of(context).size.width / 2,
-                //   ),
-                // ),
+                
                 Container(
                   color: Colors.white,
                   margin: EdgeInsets.only(left: 25, right: 25, top: 20),
@@ -177,19 +151,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: MaterialButton(
                             onPressed: () async {
                               _formKey.currentState!.validate();
-                              //   var email = emailController.text.toString();
-                              //   var password = passwordController.text.toString();
-                              //   var body = {
-                              //     "dealerLogin":{"email": email, "password": password}
-                              // };
-                              //   logIn(body);
+                              
 
                               if (_userName.text.toString() == "Fininfocom") {
                                 if (_password.text.toString() == "Fin@123") {
-                                  // final SharedPreferences prefs =
-                                  //     await SharedPreferences.getInstance();
-                                  // prefs.setString(
-                                  //     "userName", _userName.text.toString());
+                                 
                                   Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
@@ -199,28 +165,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                     content: const Text('Incorrect Password'),
-                                    // action: SnackBarAction(
-                                    //   label: 'Undo',
-                                    //   onPressed: () {
-                                    //     // Some code to undo the change.
-                                    //   },
-                                    // ),
+                                    
                                   ));
                                 }
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                   content: const Text('Username Incorrect'),
                                   
-                                  // action: SnackBarAction(
-                                  //   label: 'Undo',
-                                  //   onPressed: () {
-                                  //     // Some code to undo the change.
-                                  //   },
-                                  // ),
+                                  
                                 ));
-                                // ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                               
                               }
-                              // Navigator.pushNamed(context, '/');
                             },
                             shape: RoundedRectangleBorder(
                                 borderRadius:
